@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# pylint: disable=missing-docstring
+
 import unittest
 import upload as u
 
