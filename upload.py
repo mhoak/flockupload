@@ -68,12 +68,12 @@ def pre_compile_regex(search):
 def should_prune(path, ignore_content):
 	shouldIgnore = False
 	for ignore, ignore_regex in ignore_content.items():
-		if simplistic_regex(ignore_regex, path):
+		if simple_regex_check(ignore_regex, path):
 			print('matched regex,file: ', ignore, ', ', path)
 			shouldIgnore = True
 	return shouldIgnore
 
-def simplistic_regex(compiledre, path):
+def simple_regex_check(compiledre, path):
     return compiledre.match(path) != None
 
 def upload_files(app_id, base_directory, files):
@@ -97,7 +97,7 @@ def curl_upload(app_id, file):
 	c.setopt(c.VERBOSE, 1)
 	c.setopt(pycurl.UPLOAD, 1)
 	c.setopt(pycurl.READFUNCTION, open(file, 'rb').read)
-	filesize = os.path.getsize(filename)
+	filesize = os.path.getsize(file)
 	c.setopt(pycurl.INFILESIZE, filesize)
 	c.perform()
 	c.close()

@@ -1,0 +1,6 @@
+upload.py
+upload.sh
+Sub
+Sub/test1
+Sub/sub2/test2
+*.pyc
