@@ -1,4 +1,3 @@
-#7751e2923d2fb1c807881f0421b07df6cf93a4d8
 import urllib, mimetypes, pycurl
 import sys
 import os
